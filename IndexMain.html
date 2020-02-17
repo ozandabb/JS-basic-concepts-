@@ -1,0 +1,161 @@
+<!DOCTYPE = html>
+<html>
+<head>
+<title>Test</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" >
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" ></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" ></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" ></script>
+</head>
+
+<body>
+<center>
+<section style="width:100%; height:100px; background-color:blue; margin-left:0px; color:#FFFFFF; margin-right:0px; padding-top:20px; padding-bottom:20px;">
+<h1>JavaScript Testing page</h1>
+</section>
+
+
+<!-------------------------------------------------------------------------Section 1 start ------------------------------------------------------------->
+<div class="row">
+	<!------------JavaScript can change HTML content.-------->
+	<div class="col-md-4">
+		<br><br><p >Do you want to know who own this page</p>
+		<button type="button" onclick="document.getElementById('demo').innerHTML = 'Osanda Gamage'">Click here</button>
+		<br><br>
+		<p id="demo"> This is a dummy text.</p>
+	</div>
+  
+	<!------------JavaScript can change HTML attribute values( bulb on or off )-------->
+	<div class="col-md-4">
+		<br><button type="button" onclick="document.getElementById('demo2').src = 'a1.png'">Switch on</button>
+		<img id="demo2" width="100px" src="b1.png">
+		<button type="button" onclick="document.getElementById('demo2').src = 'a2.png'"> Switch off</button>
+	</div>
+	
+	<!--- chnage the html content and undo it  ---->
+	<div class="col-md-4">
+		<br><br><p id="osa1">This is a paragraph before change</p>
+		<script>
+			function myfirstfucntion(){
+				document.getElementById("osa1").innerHTML = "Pragraph change";
+			}
+			function mysecondFunction(){
+				document.getElementById("osa1").innerHTML = "This is a paragraph before change";
+			}
+		</script>
+		<button type="button" onclick ="myfirstfucntion()">Try it</button>
+		<button type="button" onclick="mysecondFunction()">Undo</button>
+	</div>	
+</div>
+
+<hr style="size:10pz;">
+
+
+<!-----------------------------------------------------------------Section 2 start ----------------------------------------------------------->
+<div class="row">
+
+	<div class="col-md-4">
+		<script>
+		//create dialog box
+			function mythirdfunction(){
+				window.alert("James Harden");
+			}
+		</script>
+		<p id="ishu">Do you know 3-point king in the basketball?</p>
+		<button type="button" onclick="mythirdfunction()">Don't know?</button>
+	</div>
+	<div class="col-md-4">
+		<p>Calculate -> (20 + 40) * 5 = ?</p>
+		<script>
+		//Variable creating 
+			function function01(){
+				var a = 20;
+				var b = 40;
+				var c = a + b;
+				var d = c * 5;
+				window.alert(d);
+			}
+		</script>
+		<button type="button" onclick="function01()">don't know</button>
+	</div>
+	<div class="col-md-4">
+		(not completed)
+		<p><b>Who is the president of Sri Lanka?</b><br>
+		<input type="radio" id= "osa11" name="president" value="Gotabaya">Gotabaya Rajapaksha<br>
+		<input type="radio" id= "osa11" name="president" value="Maithreepaala">Maithreepaala<br>
+		
+		</p>
+		<button type="button" onclick="functioncheck()">Check</button>
+		<button type="button" onclick="document.getElementById('osa55').innerHTML = 'Gotabaya Rajapaksha'">Get the answer</button><br><br>
+		<p id="osa55" style="background-color:green; width:300px; color:#ffffff;"></p>
+		<script>
+			function functioncheck(){
+				var check = document.getElementById("osa11").value;
+				if(check == 'Maithreepaala'){
+					document.getElementById("osa55").innerHTML = "Answer is wrong";
+				}
+				else if( check == 'Gotabaya' ){
+					document.getElementById("osa55").innerHTML = "Answer is correct";
+				}
+			}
+		</script>
+		
+			
+	</div>
+
+</div>
+
+<hr style="size:10pz;">
+
+<!-----------------------------------------------------------------Section 3 start ----------------------------------------------------------->
+
+<div class="row">
+	<div class="col-md-4">
+		<label>Username</label><input type="text" name="name" id="nameid"><br>
+		<label>Password</label><input type="text" name="pass" id="passid"><br>
+		<button type="button" onclick = "details()">Submit</button>
+		
+		<script>
+			function deatils(){
+				var name = document.getElementById("nameid").value;
+				var pass = document.getElementById("passid").value;
+				
+				document.getElementById("demo99").innerHTML = name;
+				document.getElementById("demo88").innerHTML = pass;
+			}
+		</script>
+		<p id = "demo99"></p>
+		<p id = "demo88"></p>
+	</div>
+	
+	<div class="col-md-4">
+		<p>number : 9.234579</p>
+		<button type="button" onclick="newfunction()">Click me</button>
+		<p>Fixed as:</p>
+		<p id="scl01"></p>
+		<script>
+		function newfunction(){
+				var x = 9.234579;
+				document.getElementById("scl01").innerHTML = "fixed to 0 : " + x.toFixed(0) + "<br>" + "fixed to 2 : " + x.toFixed(2) + "<br>" + "fixed to 4 : " + x.toFixed(4) + "<br>" + "fixed to 6 : " + x.toFixed(6); 
+				}
+		</script>
+		
+
+	</div>
+	<div class="col-md-4">
+	
+	</div>
+</div>
+
+
+
+
+
+
+
+</body>
+
+</html>
